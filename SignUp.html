@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      /* The device with borders */
+      .smartphone {
+        position: relative;
+        width: 360px;
+        height: 640px;
+        margin: auto;
+        border: 16px black solid;
+        border-top-width: 80px;
+        border-bottom-width: 80px;
+        border-radius: 36px;
+      }
+
+      body {
+        background-color: rgb(161, 131, 190);
+      }
+
+      /* The horizontal line on the top of the device */
+      .smartphone:before {
+        content: "";
+        display: block;
+        width: 80px;
+        height: 10px;
+        position: absolute;
+        top: -45px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #333;
+        border-radius: 10px;
+      }
+      /* The circle on the bottom of the device */
+      .smartphone:after {
+        content: "";
+        display: block;
+        width: 35px;
+        height: 35px;
+        position: absolute;
+        left: 50%;
+        bottom: -80px;
+        transform: translate(-50%, -50%);
+        background: #333;
+        border-radius: 50%;
+      }
+
+      /* The screen (or content) of the device */
+      .smartphone .content {
+        margin-top: -1cm;
+        width: 360px;
+        height: 670px;
+        background: white;
+      }
+
+      p {
+        position: relative;
+        margin-left: 82px;
+        top: 200px;
+      }
+
+      input {
+        position: relative;
+        margin-left: 82px;
+        top: 200px;
+      }
+      .in {
+        margin-left: 80px;
+        padding: 10px;
+      }
+      #bt {
+        margin-top: 180px;
+        position: absolute;
+        left: 65px;
+      }
+      #bt:hover {
+        background: rgb(4, 191, 4);
+        font-size: 13px;
+        cursor: pointer;
+        color: white;
+      }
+
+      h1 {
+        position: absolute;
+        top: 100px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      feConvolveMatrix
+    </style>
+    <script>
+      function fa() {
+        if (a.value == "" || b.value == "") {
+          f();
+          document.getElementById("a").style.border = "3px solid red";
+          document.getElementById("b").style.border = "3px solid red";
+          bt.value = "Enter Data First";
+        } else {
+          document.getElementById("a").style.border = "3px solid green";
+          document.getElementById("b").style.border = "3px solid green";
+          bt.value = "LesssGoo!!!";
+          bt.style.left = "120px";
+        }
+      }
+      flag = 1;
+      function f() {
+        if (flag == 1) {
+          bt.style.left = "-25px";
+          flag = 2;
+        } else if (flag == 2) {
+          bt.style.left = "110px";
+          flag = 1;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="smartphone">
+      <div class="content">
+        <h1 style="text-align: center">Sign Up !</h1>
+        <p>Enter Username</p>
+        <input class="in" type="text" placeholder="UserName" id="a" />
+        <p>Enter password</p>
+        <input class="in" type="password" placeholder="Password" id="b" />
+        <br />
+        <input
+          type="submit"
+          onmouseenter="fa()"
+          onclick="alert('Welcome')"
+          id="bt"
+        />
+      </div>
+    </div>
+  </body>
+</html>
